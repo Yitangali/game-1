@@ -8,6 +8,8 @@ public class DialogueV2 : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public GameObject dialogueBox;
+    public GameObject playerControl;
+    public GameObject camera;
 
     private int index;
     private bool hasTalked = false; // <--- Tambahkan ini
@@ -16,6 +18,8 @@ public class DialogueV2 : MonoBehaviour
     {
         textComponent.text = string.Empty;
         startDialogue();
+        playerControl.GetComponent<PlayerControl2>().enabled = false;
+        camera.SetActive(false);
     }
 
     void Update()
@@ -62,12 +66,14 @@ public class DialogueV2 : MonoBehaviour
             // hanya kurangi emotion kalau belum pernah diajak bicara
             if (!hasTalked)
             {
-                EmotionMeter.emotionCollected += 25f;
+                EmotionMeter.emotionCollected += 50f;
                 hasTalked = true; // tandai sudah bicara
                 Debug.Log("less Sad!");
             }
 
             dialogueBox.SetActive(false);
+            playerControl.GetComponent<PlayerControl2>().enabled = true;
+            camera.SetActive(true);
         }
     }
 }

@@ -2663,6 +2663,7 @@ GameObject:
   - component: {fileID: 773649531}
   - component: {fileID: 773649533}
   - component: {fileID: 773649532}
+  - component: {fileID: 773649534}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -2723,6 +2724,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: -3.96, y: -6.62, z: 2.16}
+--- !u!114 &773649534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773649530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91803e5e36cd0354eaf483068009786d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalControl
+  isNearPortal: 0
 --- !u!4 &775109521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3463854275479024716, guid: c8609c11296447e4a973b0b95b22463c, type: 3}
@@ -3091,6 +3105,7 @@ GameObject:
   - component: {fileID: 877498948}
   - component: {fileID: 877498949}
   - component: {fileID: 877498950}
+  - component: {fileID: 877498952}
   m_Layer: 0
   m_Name: LevelControl
   m_TagString: Untagged
@@ -3141,6 +3156,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkyboxRotate
   rotateSpeed: 1
+--- !u!114 &877498952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877498947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99736cce620b4504b9a07a7ac9fef44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelControl
 --- !u!4 &888375250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8319828603918035214, guid: d80f2a46cbb396249a31214f36357b86, type: 3}

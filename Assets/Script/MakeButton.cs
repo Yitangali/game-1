@@ -22,9 +22,9 @@ public class MakeButton : MonoBehaviour
         if (btn.CompareTo("MeleeBtn") == 0)
         {
             hero.GetComponent<FighterAction>().SelectAttack("Melee");
-        } else if (btn.CompareTo("DeffenseBtn") == 0)
+        } else if (btn.CompareTo("RangeBtn") == 0)
        {
-            hero.GetComponent<FighterAction>().SelectAttack("Deffense");
+            hero.GetComponent<FighterAction>().SelectAttack("Range");
         } else
         {
             //debug.log

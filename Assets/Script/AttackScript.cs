@@ -10,10 +10,10 @@ public class AttackScript : MonoBehaviour
     private string animationName;
 
     [SerializeField]
-    private bool magicAttack;
+    private bool magicAttack; 
 
-    [SerializeField]
-    private float magicCost;
+     [SerializeField]
+    private float magicCost; 
 
     [SerializeField]
     private float minAttackMultiplier;
@@ -30,32 +30,35 @@ public class AttackScript : MonoBehaviour
     private FighterStats attackerStats;
     private FighterStats targetStats;
     private float damage = 0.0f;
-    private float xMagicNewScale;
-    private Vector2 magicScale;
-/*
-    public void Start()
-    {
-        magicScale = GameObject.Find("HeroMagicFill").GetComponent<RectTransform>().localScale;
-    }
-*/
+
     public void Attack(GameObject victim)
-    {   
-        
+    {   
         attackerStats = owner.GetComponent<FighterStats>();
         targetStats = victim.GetComponent<FighterStats>();
-
+        
         if(attackerStats.magic >= magicCost)
         {
             float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
-           // attackerStats.updateMagicFill(magicCost);
 
             damage = multiplier * attackerStats.melee;
-        }
+            if (magicAttack)
+            {
+                damage = multiplier * attackerStats.magicRange;
+            }
 
-        float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
-        damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
-        owner.GetComponent<Animator>().Play(animationName);
-        targetStats.ReceiveDamage(damage);
-        
+            float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
+            damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
+            owner.GetComponent<Animator>().Play(animationName);
+            targetStats.ReceiveDamage(damage);
+            attackerStats.updateMagicFill(magicCost);
+        } else
+        {
+            Invoke("SkipTurnContinueGame", 2);
+        }
+    }
+
+    void SkipTurnContinueGame()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().NextTurn();
     }
 }

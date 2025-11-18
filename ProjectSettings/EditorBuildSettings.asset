@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/mainmenu_putrii.unity
+    guid: 3371af315cb51c3438be512edb54ba22
+  - enabled: 1
     path: Assets/Scenes/Level1_2.unity
     guid: 1ebc5c7f459b9cb48a908fdad8298f47
   - enabled: 1

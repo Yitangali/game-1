@@ -7,24 +7,24 @@ public class FighterAction : MonoBehaviour
 {
     private GameObject Enemy;
     private GameObject Hero;
+    private GameController gameController; // <-- TAMBAHKAN INI
 
     [SerializeField] 
     private GameObject meleePrefab;
 
     [SerializeField]
-    GameObject rangedPrefab;
+    private GameObject rangePrefab;
 
     [SerializeField]
     private Sprite faceIcon;
 
     private GameObject currentAttack;
-    private GameObject meleeAttack;
-    private GameObject rangedAttack;
 
     void Awake()
     {
         Hero = GameObject.FindGameObjectWithTag("Hero");
         Enemy = GameObject.FindGameObjectWithTag("Enemy");
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     public void SelectAttack(string btn)
@@ -33,15 +33,16 @@ public class FighterAction : MonoBehaviour
         if(tag == "Hero")
         {
             victim = Enemy;
+            gameController.HideBattleMenu();
         }
+
         if (btn.CompareTo("Melee") == 0)
         {
             meleePrefab.GetComponent<AttackScript>().Attack(victim);
 
-        }else if (btn.CompareTo("Range") == 0)
+        } else if (btn.CompareTo("Range") == 0)
         {
-            rangedPrefab.GetComponent<AttackScript>().Attack(victim);
-        }
-        
+            rangePrefab.GetComponent<AttackScript>().Attack(victim);
+        } 
     }
 }

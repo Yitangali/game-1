@@ -10,8 +10,8 @@ public class GameController : MonoBehaviour
     private List<FighterStats> fighterStats;
 
     [SerializeField]
-    private GameObject battleMenu;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject battleMenu; 
+    
     void Start()
     {
         fighterStats = new List<FighterStats>();
@@ -54,5 +54,11 @@ public class GameController : MonoBehaviour
         {
             NextTurn(); 
         }
+    }
+
+    // --- TAMBAHKAN FUNGSI INI ---
+    public void HideBattleMenu()
+    {
+        this.battleMenu.SetActive(false);
     }
 }

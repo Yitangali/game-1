@@ -17,7 +17,8 @@ public class LevelControl : MonoBehaviour
         {
             fadeIn.SetActive(true);
             StartCoroutine(Transition());
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
+            enterPortal = false;
         }
         
         //if (isCutscene2 == true)

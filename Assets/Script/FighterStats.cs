@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
@@ -69,13 +70,19 @@ public class FighterStats : MonoBehaviour, IComparable
 
             Destroy(healthFill);
             Destroy(gameObject);
+
+            SceneManager.LoadScene(3);
         } else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);
             healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
         }
         
-        Invoke("ContinueGame", 2);
+        if (dead == false)
+        {
+            Invoke("ContinueGame", 2);
+        }
+        
    }
 
         public void updateMagicFill(float cost)

@@ -58,7 +58,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Exposure: 1
+<<<<<<< HEAD
     - _Rotation: 25.672464
+=======
+    - _Rotation: 24.413681
+>>>>>>> 498ccf54f9a614c0e3926038f41dcf03579da209
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

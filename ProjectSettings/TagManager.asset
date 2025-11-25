@@ -7,6 +7,11 @@ TagManager:
   - Enemy
   - Hero
   - Dead
+  - NPC
+  - NPC 2
+  - NPC3
+  - NPC4
+  - NPC5
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - NavMesh
   - 
   - 
   - 

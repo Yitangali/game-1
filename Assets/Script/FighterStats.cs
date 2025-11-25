@@ -72,6 +72,7 @@ public class FighterStats : MonoBehaviour, IComparable
             Destroy(gameObject);
 
             SceneManager.LoadScene(3);
+
         } else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);

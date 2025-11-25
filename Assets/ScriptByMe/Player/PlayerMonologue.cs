@@ -76,8 +76,10 @@ public class PlayerMonologue : MonoBehaviour
             //}
 
             dialogueBox.SetActive(false);
+            Level1Control.isOnCutscene = false;
             playerControl.GetComponent<PlayerControl2>().enabled = true;
             camera.SetActive(true);
+            
         }
     }
 }

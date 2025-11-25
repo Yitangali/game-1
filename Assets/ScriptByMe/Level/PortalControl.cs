@@ -13,7 +13,7 @@ public class PortalControl : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && isNearPortal == true)
         {
-            LevelControl.enterPortal = true;
+            Level1Control.enterPortal = true;
         }
     }
 

@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-
-    
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             float interactRange = 2f;
@@ -18,5 +17,6 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
+
     }
 }

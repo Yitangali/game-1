@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54976484d70e9be4a85c701cc0d8cb3f, type: 3}
+  m_Name: Joy
+  m_EditorClassIdentifier: Assembly-CSharp::VeilsData
+  veilName: Joy
+  baseHp: 10
+  baseStrength: 5
+  baseMagic: 5
+  baseDefP: 7
+  baseDefM: 7
+  veilIcon: {fileID: 21300000, guid: 4a3f39114c1501f4c8227e7cdc737de8, type: 3}
+  veilPortrait: {fileID: 21300000, guid: a8f358dacf6c1104d9dd5a05f0ebf700, type: 3}
